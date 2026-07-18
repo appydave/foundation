@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "AppyDave shared foundation primitives — Lifecycle, ConfigLoader, Logger, atomicWrite, SerialQueue, Store. Neutral (no product prefix); reused by AppyStack, AppySentinel, AppyTron.",
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
