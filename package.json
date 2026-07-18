@@ -1,0 +1,26 @@
+{
+  "name": "appydave-foundation",
+  "private": true,
+  "version": "0.1.0",
+  "description": "AppyDave shared foundation — neutral, product-prefix-free libraries reused by every AppyDave boilerplate (AppyStack, AppySentinel, AppyTron)",
+  "type": "module",
+  "workspaces": [
+    "packages/core"
+  ],
+  "scripts": {
+    "build": "bun run --filter '@appydave/*' build",
+    "test": "bun run --filter '@appydave/*' test",
+    "typecheck": "bun run --filter '@appydave/*' typecheck",
+    "lint": "bun run --filter '@appydave/*' lint"
+  },
+  "engines": {
+    "bun": ">=1.1.0",
+    "node": ">=20"
+  },
+  "author": "David Cruwys",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appydave/foundation.git"
+  }
+}
