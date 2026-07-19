@@ -51,6 +51,11 @@ session's build — I wrote every line.)*
 
 ## The unify wins (ranked — gratuitous divergence to fix)
 
+> **✅ Targets DECIDED (2026-07-19) — see [`recommended-stack.md`](./recommended-stack.md).** The
+> winning implementations were chosen by best-in-class research, not majority vote. Headline: **logging
+> → LogTape, NOT Pino** — Pino degrades to a console shim in the browser/renderer, so it's wrong as the
+> *shared* choice. Read the "→ X" entries below as pointers to that doc's researched picks.
+
 1. **Logging → `createLogger`.** The one you called. Stack rolls its own Pino; Sentinel + Tron already
    share `@core`'s factory. Pure win, tiny change.
 2. **Env-config as a shared tool.** Stack's Zod-env-schema + accessor is a *generic* pattern every app
