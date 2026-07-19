@@ -35,8 +35,11 @@ web, or Electron code ever belongs here.
 `@appydave/core` was **extracted** from the already-tested `@appydave/appysentinel-core`
 (`lifecycle`, `config`, `logger`, `atomic-write`, `serial-queue` — code + tests lifted verbatim),
 plus a new `Store` primitive built over `atomicWrite` + `SerialQueue`. AppySentinel keeps only its
-Sentinel-specific bits (`Signal`, `SignalBus`, `createSentinel`, `QueryResult`); the plan is to
-de-dup it (and AppyStack) onto `@appydave/core` — not yet done (touches live systems).
+Sentinel-specific bits (`Signal`, `SignalBus`, `createSentinel`, `QueryResult`). A three-app audit
+(2026-07-19, see [`docs/dedup-plan.md`](./docs/dedup-plan.md)) found the 5 shared primitives
+byte-identical, **AppySentinel** the only worthwhile de-dup (GO, but needs a go — live/published),
+**AppyStack** shares essentially nothing (SKIP), and a `@appydave/config` extraction premature
+(DEFER). Not yet executed.
 
 ## 3. What belongs here (the bar for adding a primitive)
 
