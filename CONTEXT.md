@@ -57,9 +57,9 @@ product, **not** here.
 - **ESM**, `type: module`; `.js` extensions on relative imports (bundler resolution).
 - Runtime deps kept minimal: `pino`, `zod` (and `ulid` only where a primitive needs it — the six
   current primitives need only pino + zod).
-- Published as `@appydave/core` (scoped). **Not yet published to npm** — consumers `file:`-link it
-  for local dev (see AppyTron's `--link-core`). Publishing is the real fix for that; tracked but
-  deferred.
+- **Published to npm as `@appydave/core@0.1.0`** (public, scoped under `@appydave`). Consumers pin
+  `^0.1.0` and it resolves from npm; AppyTron's `--link-core` stays useful for editing core + an app
+  together. **Bump the version before each re-publish** (`npm publish` needs an OTP).
 
 ## 5. Repo map + verify
 
