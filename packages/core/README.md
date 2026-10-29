@@ -4,8 +4,12 @@ The shared, product-prefix-free foundation reused by every AppyDave boilerplate
 (AppyStack · AppySentinel · AppyTron).
 
 ```bash
-npm i @appydave/core
+npm i @appydave/core zod@^4
 ```
+
+`zod` is a **peer dependency** (`^4.0.0`) from 0.2.0: the app supplies the one zod, and the
+`z` that `@appydave/core` re-exports is that same copy. npm 7+ and Bun install a missing peer
+automatically; listing it yourself keeps the version visible.
 
 ## Primitives
 

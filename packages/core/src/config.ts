@@ -11,7 +11,7 @@ import { promises as fs } from 'node:fs';
 import { z } from 'zod';
 
 export interface ConfigLoaderOptions<T> {
-  /** Zod schema describing the merged config. */
+  /** Zod 4 schema describing the merged config (zod is a peer dependency). */
   schema: z.ZodType<T>;
 
   /** Static defaults applied first. */

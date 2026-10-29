@@ -77,6 +77,16 @@ describe('createConfigLoader', () => {
     await expect(loader.load()).rejects.toThrow();
   });
 
+  it('rejects with a zod 4 ZodError whose issues name the failing path', async () => {
+    const loader = createConfigLoader({
+      schema,
+      defaults: { port: 'nope' as unknown as number, logger: { level: 'info' } },
+    });
+    const err = await loader.load().catch((e: unknown) => e);
+    expect(err).toBeInstanceOf(z.ZodError);
+    expect((err as z.ZodError).issues[0]?.path).toEqual(['port']);
+  });
+
   it('env mapping creates intermediate objects for dotted paths', async () => {
     const loader = createConfigLoader({
       schema: z.object({
